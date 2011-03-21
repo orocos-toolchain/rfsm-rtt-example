@@ -11,6 +11,6 @@ return rfsm.csta:new {
 	    end, },
 
    rfsm.trans:new{src="initial", tgt="ping" },
-   rfsm.trans:new{src="ping", tgt="pong", events={"e_done"}},
-   rfsm.trans:new{src="pong", tgt="ping", events={"e_done"}},
+   rfsm.trans:new{src="ping", tgt="pong", events={"e_pong"}},
+   rfsm.trans:new{src="pong", tgt="ping", events={"e_ping"}},
 }

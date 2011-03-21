@@ -1,0 +1,71 @@
+
+
+Running the example
+
+$ ./run.sh
+[rosrun] You have chosen a non-unique executable, please pick one of the following:
+1) /home/mk/src/ros/orocos_toolchain_ros/ocl/install/bin/deployer-gnulinux
+2) /home/mk/src/ros/orocos_toolchain_ros/ocl/bin/deployer-gnulinux
+#? 2
+0.020 [ ERROR  ][DeploymentComponent::import] The ROS package 'rtt' in '/home/mk/src/ros/orocos_toolchain_ros/rtt' nor its dependencies contained a lib/orocos directory.
+INFO: created undeclared connector root.initial
+   Switched to : Deployer
+
+  This console reader allows you to browse and manipulate TaskContexts.
+  You can type in an operation, expression, create or change variables.
+  (type 'help' for instructions and 'ls' for context info)
+
+    TAB completion and HISTORY is available ('bash' like)
+
+Deployer [S]> cd lua 
+
+TaskBrowser connects to all data ports of lua
+   Switched to : lua
+lua [S]> start 
+ = true                
+
+lua [R]> in ping entry
+
+lua [R]> leave 
+ Watching lua [R]> events.
+events.connected   events.disconnect  events.last        events.name        events.write       
+lua [R]> events.write ("e_pong")
+ = (void)              
+
+ Watching lua [R]> in pong entry
+
+ Watching lua [R]> events.write ("e_ping")
+ = (void)              
+
+ Watching lua [R]> in ping entry
+
+ Watching lua [R]> ls
+
+ Listing TaskContext TaskBrowser[S] :
+
+ Configuration Properties: (none)
+
+ Provided Interface:
+  Attributes   : (none)
+  Operations      : activate cleanup configure error getPeriod inFatalError inRunTimeError isActive isConfigured isRunning setPeriod start stop trigger update 
+
+ Data Flow Ports: 
+ Out(C)      string events         => e_ping
+  In(C)      string rFSM_cur_fqn   <= ( use 'rFSM_cur_fqn.read(sample)' to read a sample from this port)
+
+ Services: 
+  events         ( No description set for this Port. Use .doc() to document it. ) 
+  rFSM_cur_fqn   ( No description set for this Port. Use .doc() to document it. ) 
+
+ Requires Operations :  (none)
+ Requests Services   :  (none)
+
+ TaskBrowser Peers : lua[R] 
+
+ Watching lua [R]> enter
+lua [R]> stop
+ = true                
+
+lua [S]> quit
+
+TLSF bytes allocated=20480 overhead=6384 max-used=6608 currently-used=6384 still-allocated=0

@@ -1,4 +1,5 @@
 RFSM=`rospack find rfsm`
-export LUA_PATH=";;;$LUA_PATH;$RFSM/?.lua"
+OCL=`rospack find ocl`
+export LUA_PATH=";;;$LUA_PATH;$RFSM/?.lua;$OCL/lua/modules/?.lua"
 
 rosrun ocl deployer-gnulinux -s deploy.ops

@@ -2,6 +2,7 @@ import("rtt")
 import("ocl")
 loadComponent("lua", "OCL::LuaComponent")
 lua.exec_file("launch_fsm.lua")
+lua.configure
 
 
 
