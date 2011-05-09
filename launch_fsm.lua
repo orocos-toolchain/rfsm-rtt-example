@@ -8,7 +8,7 @@ local fqn_out, events_in
 
 function configureHook()
    -- load state machine
-   fsm = rfsm.init(dofile("fsm.lua"))
+   fsm = rfsm.init(rfsm.load("fsm.lua"))
 
    -- the following creates a string input port, adds it as a event
    -- driven port to the Taskcontext. The third line generates a
@@ -28,18 +28,7 @@ function configureHook()
    return true
 end
 
-function startHook()
-   return true
-end
-
-function updateHook()
-   rfsm.run(fsm)
-   return true
-end
-
-function stopHook()
-   return true
-end
+function updateHook() rfsm.run(fsm) end
 
 function cleanupHook()
    -- cleanup the created ports.
@@ -47,5 +36,4 @@ function cleanupHook()
    tc:removePort(events_in:info().name)
    fqn_out:delete()
    events_in:delete()
-   return true
 end
