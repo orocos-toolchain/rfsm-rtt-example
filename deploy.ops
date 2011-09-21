@@ -1,4 +1,3 @@
-import("rtt")
 import("ocl")
 loadComponent("Supervisor", "OCL::LuaComponent")
 Supervisor.exec_file("launch_fsm.lua")
