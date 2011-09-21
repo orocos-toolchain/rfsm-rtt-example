@@ -4,8 +4,6 @@ require "rttlib"
 tc=rtt.getTC()
 d=tc:getPeer("deployer")
  
-d:import("rtt")
-d:import("ocl")
 d:loadComponent("Supervisor", "OCL::LuaComponent")
 sup = d:getPeer("Supervisor")
 
