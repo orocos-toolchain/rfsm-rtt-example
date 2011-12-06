@@ -24,7 +24,7 @@ function configureHook()
    -- function suitable to be added to the rFSM step hook to do this.
    fqn_out = rtt.OutputPort("string")
    tc:addPort(fqn_out, "rFSM_cur_fqn", "current active rFSM state")
-   fsm.step_hook=rfsm_rtt.gen_write_fqn(fqn_out)
+   rfsm.post_step_hook_add(fsm, rfsm_rtt.gen_write_fqn(fqn_out))
    return true
 end
 
