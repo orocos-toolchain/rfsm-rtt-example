@@ -1,0 +1,5 @@
+
+Simple example illustrating how to use rFSM within OROCOS RTT.
+For available options run:
+
+$ ./run -h
