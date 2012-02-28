@@ -3,5 +3,15 @@ loadComponent("Supervisor", "OCL::LuaComponent")
 Supervisor.exec_file("launch_fsm.lua")
 Supervisor.configure
 
+loadService("Deployer", "print")
 
-
+print.ln("\nrFSM - RTT example using taskbrowser")
+print.ln("")
+print.ln("  First go to Supervisor and start it")
+print.ln("    > cd Supervisor")
+print.ln("    > start\n")
+print.ln("  Next leave it to be able to send events in from the outside:")
+print.ln("    > leave\n")
+print.ln("  Send events via 'events' string port:")
+print.ln("    > events.write ('e_pong')")
+print.ln("    > events.write ('e_ping')\n")

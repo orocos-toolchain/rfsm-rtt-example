@@ -1,14 +1,16 @@
 
-return rfsm.csta {
-   ping = rfsm.sista {
+local state, trans, conn = rfsm.state, rfsm.trans, rfsm.conn
+
+return state {
+   ping = state {
       entry=function() print("in ping entry") end,
    },
 
-   pong = rfsm.sista {
+   pong = state {
       entry=function() print("in pong entry") end,
    },
 
-   rfsm.trans {src="initial", tgt="ping" },
-   rfsm.trans {src="ping", tgt="pong", events={"e_pong"}},
-   rfsm.trans {src="pong", tgt="ping", events={"e_ping"}},
+   trans {src="initial", tgt="ping" },
+   trans {src="ping", tgt="pong", events={"e_pong"}},
+   trans {src="pong", tgt="ping", events={"e_ping"}},
 }
