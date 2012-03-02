@@ -1,0 +1,13 @@
+<package>
+  <description brief="rFSM-RTT-example">
+    Sample package to illustrate how to use rFSM with Orocos RTT.
+  </description>
+  <author>Markus Klotzbuecher, markus.klotzbuecher@mech.kuleuven.be</author>
+  <url>http://people.mech.kuleuven.be/~mklotzbucher/rfsm/README.html</url>
+  <url>http://www.orocos.org/wiki/orocos/toolchain/LuaCookbook</url>
+  <license>Dual LGPL/BSD</license>
+  <review status="unreviewed" notes=""/>
+  <rosdep name="lua5.1"/>
+  <rosdep name="lua-gv"/>
+  <rosdep name="lua-json"/>
+</package>
