@@ -11,9 +11,7 @@ elif [[ $1 == "-t" ]]; then
     rosrun ocl deployer-gnulinux -s deploy.ops
 else
     cat <<EOF
-run.sh
-launch the minimal rFSM - RTT example.
-
+run.sh: launch the minimal rFSM - RTT example.
   Options:
      -t     run rtt taskbrowser
      -l     run rttlua-gnulinux deployer
