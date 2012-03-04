@@ -1,6 +1,7 @@
 require "rttlib"
 require "rfsm"
 require "rfsm_rtt"
+require "rfsmpp"
 
 local tc=rtt.getTC();
 local fsm
@@ -9,6 +10,11 @@ local fqn_out, events_in
 function configureHook()
    -- load state machine
    fsm = rfsm.init(rfsm.load("fsm.lua"))
+
+   -- enable state entry and exit dbg output
+   fsm.dbg=rfsmpp.gen_dbgcolor("rfsm-rtt-example", 
+			       { STATE_ENTER=true, STATE_EXIT=true}, 
+			       false)
 
    -- redirect rFSM output to rtt log
    fsm.info=function(...) rtt.logl('Info', table.concat({...}, ' ')) end
