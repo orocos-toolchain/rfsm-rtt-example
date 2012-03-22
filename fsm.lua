@@ -10,7 +10,7 @@ return state {
       entry=function() print("in pong entry") end,
    },
 
-   trans {src="initial", tgt="ping" },
+   trans {src="initial", tgt="ping", effect=function() print("paramx =", paramX) end },
    trans {src="ping", tgt="pong", events={"e_pong"}},
    trans {src="pong", tgt="ping", events={"e_ping"}},
 }

@@ -9,6 +9,11 @@ local fqn_out, events_in
 
 function configureHook()
    -- load state machine
+
+   -- Parameters can be defined here (must be global to be visible in
+   -- fsm!) and could come from properties, loaded from files, etc.
+   paramX=33
+
    fsm = rfsm.init(rfsm.load("fsm.lua"))
 
    -- enable state entry and exit dbg output

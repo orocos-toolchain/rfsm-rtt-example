@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RFSM=`rospack find rfsm`
+RFSM=`rospack find rFSM`
 OCL=`rospack find ocl`
 
 export LUA_PATH=";;;$LUA_PATH;$RFSM/?.lua;$OCL/lua/modules/?.lua"
